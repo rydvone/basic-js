@@ -19,13 +19,18 @@ function countCats(/* matrix */) {
   console.log('arguments' + arguments);
   for (let item of arguments) {
     for (let inde of item) {
-      console.log(inde);
-      numCats += inde.filter((el) => el == "^^");
-      console.log(numCats);
+      // console.log(inde);
+      // numCats += inde.filter((el) => el == "^^");
+      // console.log(numCats);
+      for (let el of inde) {
+        if (el == "^^") {
+          numCats++;
+        }
+      }
     }
   }
   console.log("numCats = " + numCats);
-  return numCats.length; 
+  return numCats; 
 }
 
 module.exports = {
