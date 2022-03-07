@@ -18,7 +18,9 @@ const HALF_LIFE_PERIOD = 5730;
  *
  */
 function dateSample() {
-  // throw new NotImplementedError('Not implemented');
+
+  throw new NotImplementedError('Not implemented');
+  
   let res;
 
   if (typeof (arguments[0]) === 'string' && !(isNaN(arguments[0])) && arguments[0] > 0 && arguments[0] < MODERN_ACTIVITY) {
