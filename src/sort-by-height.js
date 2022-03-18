@@ -13,7 +13,27 @@ const { NotImplementedError } = require('../extensions/index.js');
  */
 function sortByHeight(/* arr */) {
   throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
+  // const innerArr = [...arr];  
+  
+  // innerArr.sort((a, b) => {
+  //   if (a > b) return 1;
+  //   if (a < b) return -1;
+  //   return 0;
+  // }); 
+  // for(let i = 0; i < innerArr.length; i++) {
+  //   if(innerArr[i] == -1) {
+  //     innerArr.splice(i, 1);
+  //     i--;
+  //   }
+  // }
+
+  // return arr.map((el) => {
+  //   if(el != -1) {
+  //     return el = innerArr.shift();
+  //   } else {
+  //     return el;
+  //   }
+  // })
 }
 
 module.exports = {
