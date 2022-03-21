@@ -13,48 +13,47 @@ const { NotImplementedError } = require('../extensions/index.js');
  * transform([1, 2, 3, '--discard-prev', 4, 5]) => [1, 2, 4, 5]
  * 
  */
-function transform(/* arr */) {
- // throw new NotImplementedError('Not implemented');
+function transform(arr) {
+ throw new NotImplementedError('Not implemented');
 
- if(!(arr instanceof Array)) {
-  throw new Error (`'arr' parameter must be an instance of the Array!`);
-}
-let arrCopy = [...arr];
-for(let i = 0; i < arrCopy.length; i++) {
-  if(arrCopy[i] == `--discard-next`) {
-    console.log('1');
-    if(i == (arrCopy.length - 1) ) {
-      continue;
-    } else {
-      arrCopy.splice(i+1, 1);
-    }
-  }
-  if(arrCopy[i] == `--discard-prev`) {
-    console.log('2');
-    if (i == 0 ) {
-      continue;
-    } else {
-      arrCopy.splice(i-1, 1);
-    }
-  }
-  if(arrCopy[i] == `--double-next`) {
-    console.log('3');
-    if (i == (arrCopy.length - 1)) {
-      continue;
-    } else {
-      arrCopy.splice(i+2, 0, arrCopy[i + 1]);
-    }
-  }
-  if(arrCopy[i] == `--double-prev`) {
-    console.log('4');
-    if (i == 0  )  {
-      continue;
-    } else {
-      arrCopy.splice(i-2, 0, arrCopy[i - 1]);
-    }
-    i++;      
-  }
-  // console.log(arrCopy);
+//  if(!(arr instanceof Array)) {
+//   throw new Error (`'arr' parameter must be an instance of the Array!`);
+// }
+// let arrCopy = [...arr];
+// for(let i = 0; i < arrCopy.length; i++) {
+//   if(arrCopy[i] == `--discard-next`) {
+//     console.log('1');
+//     if(i == (arrCopy.length - 1) ) {
+//       continue;
+//     } else {
+//       arrCopy.splice(i+1, 1);
+//     }
+//   }
+//   if(arrCopy[i] == `--discard-prev`) {
+//     console.log('2');
+//     if (i == 0 ) {
+//       continue;
+//     } else {
+//       arrCopy.splice(i-1, 1);
+//     }
+//   }
+//   if(arrCopy[i] == `--double-next`) {
+//     console.log('3');
+//     if (i == (arrCopy.length - 1)) {
+//       continue;
+//     } else {
+//       arrCopy.splice(i+2, 0, arrCopy[i + 1]);
+//     }
+//   }
+//   if(arrCopy[i] == `--double-prev`) {
+//     console.log('4');
+//     if (i == 0  )  {
+//       continue;
+//     } else {
+//       arrCopy.splice(i-2, 0, arrCopy[i - 1]);
+//     }
+//     i++;      
+//   }
 }
 
 
