@@ -11,35 +11,35 @@ const { NotImplementedError } = require('../extensions/index.js');
  * getSeason(new Date(2020, 02, 31)) => 'spring'
  * 
  */
-function getSeason(/* date */) {
+function getSeason(date) {
   throw new NotImplementedError('Not implemented');
-  let str = '';
+  // let str = '';
 
-  if(date == undefined) {
-    return str = 'Unable to determine the time of year!';
-  }
-  if(!(date instanceof Date)) {
-    throw new Error('Invalid date!');
-  }
-  if(Object.getOwnPropertyNames(date).length > 0) {
-    throw new Error('Invalid date!');
-  }
+  // if(date == undefined) {
+  //   return str = 'Unable to determine the time of year!';
+  // }
+  // if(!(date instanceof Date)) {
+  //   throw new Error('Invalid date!');
+  // }
+  // if(Object.getOwnPropertyNames(date).length > 0) {
+  //   throw new Error('Invalid date!');
+  // }
 
-  let monthDate = new Date(date).getMonth();
-  if(monthDate == 11 || monthDate == 0 || monthDate == 1) {
-    str = 'winter';
-  }
-  if(monthDate == 2 || monthDate == 3 || monthDate == 4) {
-    str = 'spring';
-  }
-  if(monthDate == 5 || monthDate == 6 || monthDate == 7) {
-    str = 'summer';
-  }
-  if(monthDate == 8 || monthDate == 9 || monthDate == 10) {
-    str = 'autumn';
-  }
+  // let monthDate = new Date(date).getMonth();
+  // if(monthDate == 11 || monthDate == 0 || monthDate == 1) {
+  //   str = 'winter';
+  // }
+  // if(monthDate == 2 || monthDate == 3 || monthDate == 4) {
+  //   str = 'spring';
+  // }
+  // if(monthDate == 5 || monthDate == 6 || monthDate == 7) {
+  //   str = 'summer';
+  // }
+  // if(monthDate == 8 || monthDate == 9 || monthDate == 10) {
+  //   str = 'autumn';
+  // }
 
-  return str;
+  // return str;
 }
 
 module.exports = {
