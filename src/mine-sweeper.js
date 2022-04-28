@@ -23,9 +23,55 @@ const { NotImplementedError } = require('../extensions/index.js');
  *  [1, 1, 1]
  * ]
  */
-function minesweeper(/* matrix */) {
-  throw new NotImplementedError('Not implemented');
+function minesweeper(matrix) {
+  // throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
+
+  const arrInner =  [];
+  for(let el of matrix) {
+    const arrInnerTemp = el.map(elInner => elInner = 0)
+    arrInner.push(arrInnerTemp);
+  }
+ 
+  function incElemPrev(ind1, ind2) {
+    arrInner[ind1][ind2]++;
+    if((ind2 - 1) >= 0) {
+      arrInner[ind1][ind2-1]++;
+    }
+    if((ind2 + 1) < arrInner.length) {
+      arrInner[ind1][ind2+1]++;
+    }
+  }
+
+  function incElemNext(ind1, ind2) {
+    arrInner[ind1][ind2]++;
+    if((ind2 - 1) >= 0) {
+      arrInner[ind1][ind2-1]++;
+    }
+    if((ind2 + 1) < arrInner.length) {
+      arrInner[ind1][ind2+1]++;
+    }
+  }
+
+  for(let i = 0; i < matrix.length; i++) {
+    for(let j = 0; j < matrix[i].length; j++) {
+      if(matrix[i][j] === true) {
+        if((i - 1) >= 0) {
+          incElemPrev((i-1), j);
+        }
+        if((i + 1) < matrix.length) {
+          incElemNext((i+1), j);
+        }
+        if((j-1) >= 0) {
+          arrInner[i][j-1]++;
+        }
+        if((j+1) >= 0) {
+          arrInner[i][j+1]++;
+        }
+      }
+    }
+  }
+  return arrInner;
 }
 
 module.exports = {

@@ -54,17 +54,17 @@ function transform(arr) {
 //     }
 //     i++;      
 //   }
-}
+// }
 
 
-for (let i = 0; i < arrCopy.length; i++) {
-  if (arrCopy[i] == `--discard-next` || arrCopy[i] == `--discard-prev` || arrCopy[i] == `--double-next` || arrCopy[i] == `--double-prev`) {
-    arrCopy.splice(i, 1);
-    i--;
-  }
-}
+// for (let i = 0; i < arrCopy.length; i++) {
+//   if (arrCopy[i] == `--discard-next` || arrCopy[i] == `--discard-prev` || arrCopy[i] == `--double-next` || arrCopy[i] == `--double-prev`) {
+//     arrCopy.splice(i, 1);
+//     i--;
+//   }
+// }
 
-return arrCopy;
+// return arrCopy;
 }
 
 module.exports = {
