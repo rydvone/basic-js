@@ -14,7 +14,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  * 
  */
 function transform(arr) {
-  // throw new NotImplementedError('Not implemented');
+  throw new NotImplementedError('Not implemented');
 
   if (!(arr instanceof Array)) {
     throw new Error(`'arr' parameter must be an instance of the Array!`);
@@ -55,8 +55,6 @@ function transform(arr) {
       i++;
     }
   }
-
-
   for (let i = 0; i < arrCopy.length; i++) {
     if (arrCopy[i] == `--discard-next` || arrCopy[i] == `--discard-prev` || arrCopy[i] == `--double-next` || arrCopy[i] == `--double-prev`) {
       arrCopy.splice(i, 1);
