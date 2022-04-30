@@ -12,15 +12,15 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function deleteDigit(num) {
-  // throw new NotImplementedError('Not implemented');
-  let arr = [];
-  num = '' + num;
-  for(let i = 0; i < num.length; i++) {
-    let arrTemp = ('' + num).split('');
-    arrTemp.splice(i, 1);
-    arr.push(arrTemp.join(''));
-  }
-  return Math.max(...arr);
+  throw new NotImplementedError('Not implemented');
+  // let arr = [];
+  // num = '' + num;
+  // for(let i = 0; i < num.length; i++) {
+  //   let arrTemp = ('' + num).split('');
+  //   arrTemp.splice(i, 1);
+  //   arr.push(arrTemp.join(''));
+  // }
+  // return Math.max(...arr);
 }
 
 module.exports = {

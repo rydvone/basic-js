@@ -23,42 +23,42 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function getDNSStats(dom) {
-  // throw new NotImplementedError('Not implemented');
+  throw new NotImplementedError('Not implemented');
   
-  const obj = {};
-  let arrAll = [];
+//   const obj = {};
+//   let arrAll = [];
 
-  //find all domain and add to array
-  for (let el of dom) {
-    let arr = [];
-    let iTemp = el.length;
-    for (let i = el.length; i > 0; i--) {
-      if (el[i] == '.' && arr.length != 0) {
-        arr.push(arr[arr.length-1] + el.slice(i, iTemp));
-        iTemp = i;
-      }
-      if (el[i] == '.' && arr.length == 0) {     
-        arr.push( el.slice(i, iTemp));
-        iTemp = i;
-      }
-    }
-    arr.push(arr[arr.length-1] + '.' + el.slice(0, iTemp));
-    arrAll.push(...arr);
-  }
+//   //find all domain and add to array
+//   for (let el of dom) {
+//     let arr = [];
+//     let iTemp = el.length;
+//     for (let i = el.length; i > 0; i--) {
+//       if (el[i] == '.' && arr.length != 0) {
+//         arr.push(arr[arr.length-1] + el.slice(i, iTemp));
+//         iTemp = i;
+//       }
+//       if (el[i] == '.' && arr.length == 0) {     
+//         arr.push( el.slice(i, iTemp));
+//         iTemp = i;
+//       }
+//     }
+//     arr.push(arr[arr.length-1] + '.' + el.slice(0, iTemp));
+//     arrAll.push(...arr);
+//   }
 
-//group domain in object
-  while (arrAll.length > 0) {
-    let countDom = 1;
-    let firstEl = arrAll.shift();
-    arrAll.forEach((elem,ind) => {
-      if (elem == firstEl) {
-        countDom++;
-        arrAll.splice(ind,1);
-      }
-    });
-    obj[firstEl] = countDom;
-  }
-  return obj;
+// //group domain in object
+//   while (arrAll.length > 0) {
+//     let countDom = 1;
+//     let firstEl = arrAll.shift();
+//     arrAll.forEach((elem,ind) => {
+//       if (elem == firstEl) {
+//         countDom++;
+//         arrAll.splice(ind,1);
+//       }
+//     });
+//     obj[firstEl] = countDom;
+//   }
+//   return obj;
 }
 
 module.exports = {

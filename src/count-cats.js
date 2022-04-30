@@ -15,16 +15,16 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function countCats() {
-  // throw new NotImplementedError('Not implemented');
-  let numCats = 0;
-  for (let item of arguments[0]) {
-    for (let el of item) {
-      if (el == "^^") {
-        numCats++;
-      }
-    }
-  }
-  return numCats;
+  throw new NotImplementedError('Not implemented');
+  // let numCats = 0;
+  // for (let item of arguments[0]) {
+  //   for (let el of item) {
+  //     if (el == "^^") {
+  //       numCats++;
+  //     }
+  //   }
+  // }
+  // return numCats;
 }
 
 module.exports = {
