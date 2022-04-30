@@ -11,7 +11,7 @@ const { NotImplementedError } = require('../extensions/index.js');
  *
  */
 function encodeLine(str) {
-  throw new NotImplementedError('Not implemented');
+  // throw new NotImplementedError('Not implemented');
 
   let obj = {};
   let s1 = '';

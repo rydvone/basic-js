@@ -22,6 +22,25 @@ const { NotImplementedError } = require('../extensions/index.js');
 class VigenereCipheringMachine {
   constructor(checkDirection) {
     this.checkDirection = checkDirection;
+    this.tableVigenereDecrypt = function (firstLetter, secondLetter) {
+      const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
+        'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
+        'W', 'X', 'Y', 'Z']
+      let table = [];
+
+      for (let i = 0; i < alphabet.length; i++) {
+        let alphabetInner = [...alphabet];
+        let temp = alphabetInner.splice(0, i);
+
+        alphabetInner.push(...temp);
+        table.push(alphabetInner);
+      }
+
+      let numLetterSecond = alphabet.indexOf(secondLetter);
+      let numLetterFirst = table[numLetterSecond].indexOf(firstLetter);
+      let resultLetter = alphabet[numLetterFirst];
+      return resultLetter;
+    }
   }
 
   encrypt(message, key) {
@@ -83,25 +102,7 @@ class VigenereCipheringMachine {
     if (typeof message === 'undefined' || typeof key === 'undefined') {
       throw new Error("Incorrect arguments!");
     }
-    const tableVigenereDecrypt = function (firstLetter, secondLetter) {
-      const alphabet = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J',
-        'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V',
-        'W', 'X', 'Y', 'Z']
-      let table = [];
 
-      for (let i = 0; i < alphabet.length; i++) {
-        let alphabetInner = [...alphabet];
-        let temp = alphabetInner.splice(0, i);
-
-        alphabetInner.push(...temp);
-        table.push(alphabetInner);
-      }
-
-      let numLetterSecond = alphabet.indexOf(secondLetter);
-      let numLetterFirst = table[numLetterSecond].indexOf(firstLetter);
-      let resultLetter = alphabet[numLetterFirst];
-      return resultLetter;
-    }
 
     const regEngSymb = /([A-Za-z])/gi;
     let messageUpper = message.replace(regEngSymb, (el) => el.toUpperCase());
@@ -120,7 +121,7 @@ class VigenereCipheringMachine {
     }
     let resultOnlyLetterInner = [];
     for (let i = 0; i < messageOnlyLetterInner.length; i++) {
-      resultOnlyLetterInner.push(tableVigenereDecrypt(messageOnlyLetterInner[i], keyOnlyLetterInner[i]))
+      resultOnlyLetterInner.push(this.tableVigenereDecrypt(messageOnlyLetterInner[i], keyOnlyLetterInner[i]))
     }
 
     let resultInner = messageUpper.replace(regEngSymb, (el) => {
