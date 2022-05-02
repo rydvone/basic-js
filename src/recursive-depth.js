@@ -19,7 +19,7 @@ class DepthCalculator {
     this.max = 0;
   }
   calculateDepth(arr = this.arr, cur = this.cur, max = this.max) {
-    throw new NotImplementedError('Not implemented');
+    // throw new NotImplementedError('Not implemented');
     
     if (cur > max) {
       max = cur;

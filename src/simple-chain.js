@@ -15,7 +15,7 @@ const chainMaker = {
     // throw new NotImplementedError('Not implemented');
     let valueInner = `( ${value} )`;
     if (typeof value === 'undefined') {
-      valueInner = '( empty )'
+      valueInner = '( empty )';
       // throw new Error("Incorrect arguments!");
     }
     console.log('this.arrMain before add = ', this.arrMain);

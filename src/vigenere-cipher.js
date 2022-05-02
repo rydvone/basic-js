@@ -44,7 +44,7 @@ class VigenereCipheringMachine {
   }
 
   encrypt(message, key) {
-    throw new NotImplementedError('Not implemented');
+    // throw new NotImplementedError('Not implemented');
     if (typeof message === 'undefined' || typeof key === 'undefined') {
       throw new Error("Incorrect arguments!");
     }
@@ -98,7 +98,7 @@ class VigenereCipheringMachine {
 
 
   decrypt(message = this.message, key = this.key) {
-    throw new NotImplementedError('Not implemented');
+    // throw new NotImplementedError('Not implemented');
     if (typeof message === 'undefined' || typeof key === 'undefined') {
       throw new Error("Incorrect arguments!");
     }
