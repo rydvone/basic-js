@@ -25,7 +25,6 @@ function getMatrixElementsSum(matrix) {
     const arrInnerTemp =  [...el];
     arrInner.push(arrInnerTemp);
   }
-
   for(let i = 0; i < arrInner[0].length; i++) {
     let sumInner = arrInner[0][i];
     for(let j = 1; j < arrInner.length; j++) {
